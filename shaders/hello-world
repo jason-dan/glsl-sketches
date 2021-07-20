@@ -1,1 +1,17 @@
+// First sketch! Shows solid color.
 
+#ifdef GL_ES
+precision mediump float;
+#endif
+
+vec getRed();
+
+uniform float u_time;
+
+void main() {
+    gl_FracColor = getRed();
+}
+
+vec getRed() {
+    return vec4(1.0,0.0,0.0,1.0);
+}
