@@ -1,17 +1,12 @@
-// First sketch! Shows solid color.
+// Following book of shaders tutorials.
 
 #ifdef GL_ES
 precision mediump float;
 #endif
 
-vec4 getRed();
-
-uniform float u_time;
+uniform vec2 resolution;
 
 void main() {
-    gl_FragColor = getRed();
-}
-
-vec4 getRed() {
-    return vec4(1.0,0.0,0.0,1.0);
+  vec2 normPos = gl_FragCoord.xy/resolution;
+  gl_FragColor = vec4(normPos,0,1);
 }
